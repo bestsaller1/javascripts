@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/test.css">
+    <title>Document</title>
+</head>
+<body>          
+<div>
+
+
+</div>
+ 
+<div class="bg-info mt-5">
+ <div class="row mx-auto d-inline g-4 form-control">
+   <div class="col-4 ">
+     <span> <b> Select Input Type  </b></span>
+    <select name="inputType" id="select" >
+      <option value="text">Text</option>
+      <option value="number">number</option>
+      <option value="textarea">remarks</option>
+      <option value="date">date</option>
+      <option value="file">upload</option>
+      <option value="checkbox">checkbox</option>
+      <option value="email">email</option>
+      <option value="image">image</option>
+      <option value="url">url</option>
+      <option value="password">password</option>
+      <option value="submit">submit</option>
+
+
+     </select>
+   </div>
+  
+   <div id ="sumision" class="col-6">
+    <span> <b>Mention Field Name  </b></span>
+     <input type="text" id = "inputext" >
+   </div>
+ </div>
+</div> <br><br>
+<div class ="col-6 border shadow mt-3 p-5" id="myinput" style="margin-left: 150px;"> <h3 class="text-center" >Registation Form</h3> </div>
+
+<script>
+  const sumision= document.querySelector('#sumision')
+  const div=document.querySelector('div')
+  const button=document.createElement('button')
+  div.innerHTML=" <h2> FILL FORM IN YOUR CHOICE </h2>"
+  div.classList.add('bg-danger')
+  div.style.color = 'white';
+  div.style.textAlign = 'center';
+  sumision.appendChild(button,inputext)
+  //document.body.appendChild(button, div)
+  button.style.fontSize='25px';
+  button.innerText="click"
+  button.style.float='right';
+  button.style.backgroundColor='green';
+  const row=document.querySelector('row')
+ 
+
+  button.addEventListener('click', ()=> {
+    document.querySelector('h2').style.color='green';
+  })
+
+  button.addEventListener('dbclick', ()=> {
+  document.querySelector('h2').style.color='yellow';
+  })
+
+  const br=document.createElement('br')
+   
+  button.addEventListener('click',()=>{
+    const inputypes=document.querySelector('#select')
+    const labelvalue=document.querySelector('#inputext')
+    console.log(inputypes.value,labelvalue.value)
+    const inputfeild=document.createElement('input')
+    const createlabel=document.createElement('label')
+    const br=document.createElement('br')
+    createlabel.innerText=labelvalue.value
+    inputfeild.type=inputypes.value
+    //createlabel.classList.add('form-control')
+    inputfeild.classList.add('form-control')
+    const div3=document.querySelector('#myinput')
+    if (labelvalue.value===""){
+      alert("Must be mention Label Name")
+      return
+    }
+
+    if(inputfeild.type==="submit"){
+      createlabel.style.display='none';
+    }
+    div3.appendChild(createlabel)
+    
+    div3.appendChild(inputfeild)
+    div3.appendChild(br)
+    
+  })
+
+  
+
+</script>
+
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
+    
+</body>
+</html>
